@@ -14,8 +14,7 @@ pw_match = "show-me-the-hydrogel"
 if st.text_input("Enter password to unlock the demo", type="password") == pw_match:
 
     # Initialise the OpenAI client, and retrieve the assistant
-    openai.api_key = st.secrets["openai_api_key"]
-    client = OpenAI()
+    client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
     assistant_id="asst_XSIcJegcF0UYf6WGMEls7EI1"
     assistant = client.beta.assistants.retrieve(assistant_id)
 
