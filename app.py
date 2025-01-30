@@ -8,13 +8,13 @@ from openai.types.beta.threads.text_delta_block import TextDeltaBlock
 
 # Title
 st.title("Demo: OpenAI Assistants API Streaming, paper assistant")
-
+openai_api_key = st.secrets["openai_api_key"]
 # password
 pw_match = "show-me-the-hydrogel"
 if st.text_input("Enter password to unlock the demo", type="password") == pw_match:
 
     # Initialise the OpenAI client, and retrieve the assistant
-    client = OpenAI()
+    client = OpenAI(openai_api_key)
     assistant_id="asst_XSIcJegcF0UYf6WGMEls7EI1"
     assistant = client.beta.assistants.retrieve(assistant_id)
 
