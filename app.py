@@ -9,7 +9,6 @@ from openai.types.beta.threads.text_delta_block import TextDeltaBlock
 
 # Title
 st.title("Demo: OpenAI Assistants API Streaming, paper assistant")
-print(st.secrets["openai_api_key"])
 # password
 pw_match = "show-me-the-hydrogel"
 if st.text_input("Enter password to unlock the demo", type="password") == pw_match:
