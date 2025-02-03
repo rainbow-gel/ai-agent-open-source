@@ -12,8 +12,8 @@ from openai.types.beta.threads.text_delta_block import TextDeltaBlock
 # ----------------------------------------------------------------------
 # 1) Define your tool/function
 # ----------------------------------------------------------------------
-def fuel_calculator(weight, distance, duration):
-    print(f"weight: {weight}, distance: {distance}, duration: {duration}")
+def fuel_calculator(weight, distance, duration, gender=None):
+    print(f"weight: {weight}, distance: {distance}, duration: {duration}, gender: {gender}")
     url = "https://sportstech.maurten.com/v1/simulationResults"
     API_KEY_PROD=str(st.secrets["MAURTEN_API_KEY"])
 
@@ -27,12 +27,14 @@ def fuel_calculator(weight, distance, duration):
     input_json["data"]["weight"] = weight
     input_json["data"]["environment"]["raceData"]["distance"] = distance
     input_json["data"]["environment"]["raceData"]["duration"] = duration
+    if gender:
+        input_json["data"]["gender"] = gender
 
     try:
         response = requests.post(url, json=input_json, headers=headers)
         outputJson = response.json()
         status = response.status_code
-        print(f" version: {outputJson['version']}")
+        # print(f" version: {outputJson['version']}")
         if status == 200:
             output = ""
             warmup_product = outputJson["data"]["fuelingProtocol"]["warmUp"]["details"][0]["product"]
@@ -80,8 +82,9 @@ class MyEventHandler(AssistantEventHandler):
                 weight = args_dict.get("weight", 0)
                 distance = args_dict.get("distance", 0)
                 duration = args_dict.get("duration", 0)
-                print(f"insdie tool call handler: weight: {weight}, distance: {distance}, duration: {duration}")
-                carbs_recommendation = fuel_calculator(weight, distance, duration)
+                gender = args_dict.get("gender", 0)
+                # print(f"insdie tool call handler: weight: {weight}, distance: {distance}, duration: {duration}")
+                carbs_recommendation = fuel_calculator(weight, distance, duration, gender)
                 tool_outputs.append({"tool_call_id": tool.id, "output": carbs_recommendation})
 
         self.submit_tool_outputs(tool_outputs, run_id)
