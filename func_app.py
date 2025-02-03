@@ -27,7 +27,6 @@ def fuel_calculator(weight, distance, duration):
     input_json["data"]["weight"] = weight
     input_json["data"]["environment"]["raceData"]["distance"] = distance
     input_json["data"]["environment"]["raceData"]["duration"] = duration
-    print(f"input_json: {input_json}")
 
     try:
         response = requests.post(url, json=input_json, headers=headers)
