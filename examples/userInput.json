@@ -2,7 +2,7 @@
   "format": "userInput.json",
   "version": "1.1.7",
   "data": {
-    "weight": 75,
+    "weight": 0,
     "height": 196,
     "age": 31,
     "gender": "male",
@@ -15,7 +15,7 @@
       "GEL160": true,
       "DM160": true,
       "DM320": true,
-      "caffeine": "high",
+      "caffeine": "low",
       "SOLID160": true
     },
     "outputData": {
@@ -45,9 +45,9 @@
           "sport" : "running",
           "location" : "London",
           "raceStart": "2024-08-11T08:00:00",
-          "distance" : 41295,
+          "distance" : 0,
           "unit" : "m",
-          "duration" : 120.0
+          "duration" : 0
       },
       "temperature": {
           "categorized" : "low",
