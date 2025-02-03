@@ -6,7 +6,7 @@
     "height": 196,
     "age": 31,
     "gender": "male",
-    "intensity": 1,
+    "intensity": 2,
     "vo2max" : 65,
     "glycogenStored": 1,
     "giTol" : "high",
