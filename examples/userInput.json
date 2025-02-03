@@ -1,0 +1,111 @@
+{
+  "format": "userInput.json",
+  "version": "1.1.7",
+  "data": {
+    "weight": 75,
+    "height": 196,
+    "age": 31,
+    "gender": "male",
+    "intensity": 1,
+    "vo2max" : 65,
+    "glycogenStored": 1,
+    "giTol" : "high",
+    "preferences": {
+      "GEL100": true,
+      "GEL160": true,
+      "DM160": true,
+      "DM320": true,
+      "caffeine": "high",
+      "SOLID160": true
+    },
+    "outputData": {
+      "speed": true,
+      "carbsOverTime": true,
+      "speedAtMaximalFatOxidation": true,
+      "absoluteVO2max": true,
+      "runningEconomy": true,
+      "speedAtLactateThreshold": true,
+      "rerAtSpeed": true,
+      "energyExpendityrePerLitreO2": true,
+      "energyExpenditurePerMinute": true,
+      "carbOxidationPerMinute": true,
+      "exogenousCarbOxidation": true,
+      "endogenousCarbOxidation": true,
+      "productActive": true
+    },
+    "useOnCourseFuel" : true,
+    "fixedProducts": [],
+    "environment": {
+      "maurtenEvent": {
+          "valid": false,
+          "event": "london"
+      },
+      "raceData": {
+          "event" : "London Marathon",
+          "sport" : "running",
+          "location" : "London",
+          "raceStart": "2024-08-11T08:00:00",
+          "distance" : 41295,
+          "unit" : "m",
+          "duration" : 120.0
+      },
+      "temperature": {
+          "categorized" : "low",
+          "forecast" : [
+              {
+                  "timestamp": "2024-08-11T08:00:00",
+                  "value": 10.38
+              },
+              {
+                  "timestamp": "2024-08-11T09:00:00",
+                  "value": 13.0
+              }
+          ]
+      },
+      "wind": {
+          "caegorized" : "average",
+          "angle": 0,
+          "forecast" : [
+              {
+                  "timestamp": "2024-08-11T08:00:00",
+                  "value": 3,
+                  "angle": 0
+              },
+              {
+                  "timestamp": "2024-08-11T10:00:00",
+                  "value": 5,
+                  "angle": 10
+              }
+          ]
+      },
+      "elevation" : {},
+      "humidity": {
+          "caegorized" : "high",
+          "forecast" : [
+              {
+                  "timestamp": "2024-08-11T08:30:00",
+                  "value": 0.3
+              },
+              {
+                  "timestamp": "2024-08-11T09:30:00",
+                  "value": 0.4
+              }
+          ]
+      },
+      "altitude": {
+          "raceAltitude": 20,
+          "homeElevation" : 20
+      }
+    },
+    "sandbox" : {
+      "valid" : false,
+      "inputProducts": {
+        "preLoadingDayBefore" : {},
+        "preLoadingRaceDay" : {},
+        "warmUp" : {},
+        "duringRace" : {},
+        "afterRace" : {}
+      }
+    }
+  }
+}
