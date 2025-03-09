@@ -104,7 +104,7 @@ class MyEventHandler(AssistantEventHandler):
 # 3) Initialize your OpenAI client and retrieve the assistant
 # ----------------------------------------------------------------------
 client = OpenAI()
-assistant_id = "asst_0W19vee5m43iBBLkYM2VDYoq"  # Replace with your assistant ID
+assistant_id = "asst_t9geBhYxVy4sXjK6qqK0aonh"  # Replace with your assistant ID
 assistant = client.beta.assistants.retrieve(assistant_id)
 
 # ----------------------------------------------------------------------
@@ -139,6 +139,7 @@ if st.text_input("Enter password", type="password") == pw_match:
             assistant_reply_container = {'text': ''}  # Holds the accumulated text
 
             event_handler = MyEventHandler(assistant_reply_box, assistant_reply_container)
+
             with client.beta.threads.runs.stream(
                 thread_id=st.session_state.thread_id,
                 assistant_id=assistant_id,
